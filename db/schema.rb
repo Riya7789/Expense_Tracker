@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_084732) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_091042) do
   create_table "expenses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.decimal "amount", precision: 10
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "debit", precision: 10
+    t.decimal "credit", precision: 10
   end
 
 end

@@ -4,6 +4,18 @@
   <%= f.input :date %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
+<br>
+<div class="container mx-12px p-1 " >
+        <div class="card" style="width: 500px;">
+          <h2>Summary</h2>
+           <ul class="list-group list-group-flush">
+          <li class="list-group-item">Balance: <%=@debit_expense %>   </li>
+          <li class="list-group-item">Debt: <%=@credit_expense %> </li>
+          <li class="list-group-item">Total: <%=@total %></li>
+           </ul>
+        </div>
+      </div>
+      <br>
 
 <%@expenses.each do |expense|%>
 <div class="card">
@@ -15,9 +27,12 @@
     </blockquote>
     <br>
     <%= link_to 'Delete', expense_path(expense),  class: 'btn btn-sm btn-danger', data: {"turbo-confirm": "Are you sure?", "turbo-method": :delete} %>
-    <%= link_to 'Revise', edit_expense_path(expense), class: 'btn btn-sm btn-success' %>
+    <%= link_to 'Edit', edit_expense_path(expense), class: 'btn btn-sm btn-success' %>
   </div>
 </div>
 <%end%>
+
+      
+
 
 

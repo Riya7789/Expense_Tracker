@@ -1,0 +1,18 @@
+<% flash.each do |message_type, message| %>
+  <% if message_type == "notice" %>
+    <p class="alert alert-info alert-dismissible fade show text-center">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </p>
+  <% elsif message_type == "alert" %>
+    <p class="alert alert-danger alert-dismissible fade show text-center">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </p>
+  <% else %>
+    <p class="alert alert-<%= message_type %> alert-dismissible fade show text-center">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </p>
+  <% end %>
+<% end %>
